@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letso Luxe | Special Offers</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            LETSO <span>LUXE</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> 
+            <a href="products.html">Shop</a>
+            <a href="offers.html" class="active">Offers</a>
+            <a href="about.html">About</a> 
+            <a href="contact.html">Contact</a> 
+            <a href="#" onclick="showCart()">🛒 CART <span id="cartCount">0</span></a>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <p>LIMITED TIME DEALS</p>
+        <h1>SPECIAL OFFERS</h1>
+        <span>Shop more. Save more.</span>
+    </section>
+
+    <section class="offer-intro">
+        <p>LETSO LUXE SPECIALS</p>
+        <h2>DON'T MISS OUT</h2>
+        <p>
+            Check out some of our selected products
+            available at special prices.
+        </p>
+    </section>
+
+    <section class="offers-grid">
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="images/vintagetee.jpeg" alt="Vintage Band Tee"></div>
+            <div class="offer-content">
+                <span class="offer-tag">25% OFF</span>
+                <h2>Vintage Band Tee</h2>
+                <p>Add a vintage touch to your everyday wardrobe.</p>
+                <div class="offer-price">
+                    R120 <del>R160</del>
+                </div>
+                <button onclick="addToCart('Vintage Band Tee', 120)" class="black-button">
+                    ADD TO CART
+                </button> 
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="images/chunkyshoes.jpeg" alt="Chunky white sneakers">
+            </div>
+            <div class="offer-content">
+                <span class="offer-tag">67% OFF</span>
+                <h2>Chunky White Sneakers</h2>
+                <p>A stylish pair for your everyday streetwear look.</p>
+                <div class="offer-price">
+                    R1200 <del>R1800</del>
+                </div>
+                <button onclick="addToCart('Chunky White Sneakers', 1200)" class="black-button">
+                    ADD TO CART
+                </button> 
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="images/bag.jpeg" alt="Mini shoulder bag">
+            </div>
+            <div class="offer-content">
+                <span class="offer-tag">26.7% OFF</span>
+                <h2>Mini Shoulder Bag</h2>
+                <p>A simple and stylish accessory for your outfit.</p>
+                <div class="offer-price">
+                    R110 <del>R150</del>
+                </div>
+                <button onclick="addToCart('Mini Shoulder Bag', 110)" class="black-button">
+                    ADD TO CART
+                </button> 
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="images/chunkynecklace.jpeg" alt="Chunky chain necklace">
+            </div>
+            <div class="offer-content">
+                <span class="offer-tag">SPECIAL</span>
+                <h2>Chunk chain Necklace</h2>
+                <p>Add a statement accessory to your outfit.</p>
+                <div class="offer-price">
+                    R80 <del>R120</del>
+                </div>
+                <button onclick="addToCart('Chunky chain necklace', 80)" class="black-button">
+                    ADD TO CART
+                </button> 
+            </div>
+        </div>
+    </section>
+
+    <section class="offer-banner">
+        <h2>YOUR NEXT LOOK IS WAITING.</h2>
+        <p>Explore the Letso Luxe collection today.</p>
+        <a href="products.html" class="yellow-button">SHOP ALL PRODUCTS</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">LETSO LUXE</div>
+        <p>Affordable fashion and the art of sophistication.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a> 
+            <a href="products.html">Shop</a>
+            <a href="offers.html">Offers</a>
+            <a href="about.html">About</a> 
+            <a href="contact.html">Contact</a> 
+        </div>
+        <p class="copyright">© 2026 Letso Luxe. All Rights Reserved.</p>
+    </footer>
+
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cartItems"></div>
+            <h3>Total: R<span id="cartTotal">0</span></h3>
+            <button onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+        </div>
+    </div>
+
+<script src="Java Script/script.js"></script>
+</body>
+</html>

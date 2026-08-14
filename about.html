@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letso Luxe | About</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body style="background-color:antiquewhite;">
+
+    <header class="header">
+        <div class="logo">
+            LETSO <span>LUXE</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> 
+            <a href="products.html">Shop</a>
+            <a href="offers.html">Offers</a>
+            <a href="about.html" class="active">About</a> 
+            <a href="contact.html">Contact</a> 
+            <a href="#" onclick="showCart()">🛒 CART <span id="cartCount">0</span></a>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <p>GET TO KNOW US</p>
+        <h1>ABOUT LETSO LUXE</h1>
+        <span>Affordable fashion. Unique style.</span>
+    </section>
+
+    <section class="about-section">
+        <div class="about-image">✨</div>
+        <div class="about-text">
+            <p class="yellow-heading">OUR STORY</p>
+            <h2>WHO IS LETSO LUXE?</h2>
+            <p>
+                Letso Luxe is a small company dealing in
+                fashion and lifestyle products.
+            </p>
+            <p>
+                The business has been in operation since
+                2025 and was created to provide trendy yet
+                affordable fashion to customers.
+            </p>
+            <p>
+                Our products include fashion wear,
+                handbags, footwear, jewellery and beauty
+                products.
+            </p>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="mission-card">
+            <div class="mission-icon">★</div>
+            <h2>OUR MISSION</h2>
+            <p>
+                Offering quality and affordable products
+                coupled with superior customer services
+                and making the experience of online
+                shopping easy and fun.
+            </p>
+        </div>
+
+        <div class="mission-card">
+            <div class="mission-icon">✦</div>
+            <h2>OUR VISION</h2>
+            <p>
+                To be among the leading online fashion
+                and lifestyle brands in South Africa
+                through provision of stylish products
+                and an easy shopping experience.
+            </p>
+        </div>
+    </section>
+
+    <section class="target-section">
+        <p class="yellow-heading">WHO WE SERVE</p>
+        <h2>OUR TARGET AUDIENCE</h2>
+        <p>
+            Letso Luxe is designed for teenagers and
+            young adults between the ages of
+            <strong>16 and 35 years</strong> who enjoy
+            fashion, beauty products and online shopping.
+        </p>
+    </section>
+
+    <section class="why-section">
+        <div>
+            <p class="yellow-heading">WHY CHOOSE US?</p>
+            <h2>
+                STYLE DOESN'T<br>
+                HAVE TO BE EXPENSIVE.
+            </h2>
+        </div>
+
+        <div class="why-list">
+            <div>
+                <strong>01</strong>
+                <p>Trendy fashion and lifestyle products.</p>
+            </div>
+            <div>
+                <strong>02</strong>
+                <p>Affordable prices for our customers.</p>
+            </div>
+            <div>
+                <strong>03</strong>
+                <p>Easy and convenient online shopping.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="footer-logo">LETSO LUXE</div>
+        <p>Affordable fashion and the art of sophistication.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="offers.html">Offers</a>
+            <a href="about.html">About</a> 
+            <a href="contact.html">Contact</a> 
+        </div>
+        <p class="copyright">© 2026 Letso Luxe. All Rights Reserved.</p>
+    </footer>
+
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cartItems"></div>
+            <h3>Total: R<span id="cartTotal">0</span></h3>
+            <button onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+        </div>
+    </div>
+
+<script src="Java Script/script.js"></script>
+</body>
+</html>
