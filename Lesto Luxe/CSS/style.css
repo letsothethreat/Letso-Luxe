@@ -1,0 +1,473 @@
+/* ============================================
+   LETSO LUXE - LUXURY STORE STYLE
+   Colors: Black, White, Gold
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+}
+
+.header {
+    background: #000;
+    color: #fff;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: gold;
+    text-transform: uppercase;
+}
+
+.header .logo span {
+    color: #fff;
+}
+
+.header nav a {
+    color: #fff;
+    margin-left: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.header nav a.active,
+.header nav a:hover {
+    color: gold;
+    border-bottom: 2px solid gold;
+}
+
+.hero {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero-small {
+    color: gold;
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    letter-spacing: 8px;
+    color: gold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.yellow-button {
+    background: gold;
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.yellow-button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.black-button {
+    background: #000;
+    color: gold;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid gold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.black-button:hover {
+    background: gold;
+    color: #000;
+}
+
+.page-banner {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.page-banner h1 {
+    font-size: 52px;
+    letter-spacing: 6px;
+    color: gold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.page-banner p {
+    font-size: 18px;
+    color: #ddd;
+}
+
+.page-banner span {
+    color: gold;
+    font-size: 16px;
+}
+
+.categories {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: #000;
+    color: #fff;
+    padding: 60px 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 2px solid gold;
+}
+
+.category-card:hover {
+    background: gold;
+    color: #000;
+}
+
+.category-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.shop-container {
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    transition: 0.3s ease;
+    padding-bottom: 15px;
+    border-radius: 8px;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background: #f8f8f8;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.product-category {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.product-card h3 {
+    margin: 15px ;
+    font-size: 15px;
+}
+
+.product-card {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.product-card .price {
+    color: gold;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.product-card .product-description {
+    font-size: 12px;
+    color: #666;
+    height: 35px;
+}
+
+.price {
+    margin: 8px 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #D4AF37;
+}
+
+.add-button {
+    width: 90%;
+    padding: 9px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.offers-grid {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.offer-card {
+    display: flex;
+    align-items: center;
+    border: 2px solid gold;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.offer-card:hover {
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+}
+
+.offer-image {
+    width: 140px;
+    height: 140px;
+    font-size: 80px;
+    background: #000;
+    flex-shrink: 0;
+    color: gold;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.offer-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.offer-content h3{
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+.offer-content p {
+    font-size: 12px;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+.offer-tag {
+    background: gold;
+    color: #000;
+    padding: 5px 15px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.offer-price {
+    font-size: 24px;
+    color: gold;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.offer-price del {
+    color: #999;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.about-section, .mission-section, .target-section, .why-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
+
+.yellow-heading {
+    color: gold;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.mission-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.mission-card {
+    border: 2px solid gold;
+    padding: 40px;
+    text-align: center;
+}
+
+.mission-icon {
+    font-size: 40px;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.why-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.why-list strong {
+    color: gold;
+    font-size: 32px;
+}
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    background: #fff;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 80px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: gold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: gold;
+}
+
+.copyright {
+    margin-top: 30px;
+    color: #888;
+    font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .offers-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .header { padding: 20px; flex-direction: column; }
+    .product-grid { grid-template-columns: 1fr; }
+    .category-grid { grid-template-columns: 1fr; }
+    .mission-section { grid-template-columns: 1fr; }
+    .why-list { grid-template-columns: 1fr; }
+}
