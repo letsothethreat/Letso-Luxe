@@ -18,6 +18,7 @@
             <a href="offers.html">Offers</a>
             <a href="about.html">About</a> 
             <a href="contact-us.html">Contact</a> 
+            <a href="#" onclick="showWishlist()">♥ WISHLIST <span id="wishlistCount">0</span></a>
             <a href="#" onclick="showCart()">🛒 CART <span id="cartCount">0</span></a>
         </nav>
     </header>
@@ -44,18 +45,16 @@
     </section>
 
     <div class="filter-buttons">
-        <button onclick="filterProducts('all')">ALL</button>
-        <button onclick="filterProducts('clothing')">CLOTHING</button>
-        <button onclick="filterProducts('footwear')">FOOTWEAR</button>
-        <button onclick="filterProducts('handbags')">HANDBAGS</button>
-        <button onclick="filterProducts('jewellery')">JEWELLERY</button>
+        <button onclick="filterProducts('all')" class="active">ALL</button>
+        <button onclick="filterProducts('fashion')">FASHION</button>
+        <button onclick="filterProducts('home')">HOME</button>
         <button onclick="filterProducts('beauty')">BEAUTY</button>
     </div>
 
     <!-- PRODUCTS -->
     <section class="shop-products">
         <!-- CLOTHING -->
-        <div class="product-card" data-category="clothing" data-name="vintage band tee" data-sale="true">
+        <div class="product-card" data-category="fashion" data-name="vintage band tee" data-sale="true">
             <div class="product-picture">👕<span class="sale-label">SALE</span>
                 <img src="images/vintagetee.jpeg" alt="Vintage Band Tee">
             <div class="product-details">
@@ -67,7 +66,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="clothing" data-name="oversized graphic hoodie">
+        <div class="product-card" data-category="fashion" data-name="oversized graphic hoodie">
             <div class="product-picture"></div>
                 <img src="images/hoodie.png" alt="oversized graphic hoodie">
             <div class="product-details">
@@ -79,7 +78,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="clothing" data-name="distressed denim jacket">
+        <div class="product-card" data-category="fashion" data-name="distressed denim jacket">
             <div class="product-picture">
                 <img src="images/jeanjacket.png" alt="distressed denim jacket">
             </div>
@@ -92,7 +91,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="clothing" data-name="baggy cargo pants">
+        <div class="product-card" data-category="fashion" data-name="baggy cargo pants">
             <div class="product-picture">
                 <img src="images/cargopants.jpeg" alt="baggy cargo pants">
             </div>
@@ -106,7 +105,7 @@
         </div>
 
         <!-- FOOTWEAR -->
-        <div class="product-card" data-category="footwear" data-name="chunky white sneakers">
+        <div class="product-card" data-category="fashion" data-name="chunky white sneakers">
             <div class="product-picture">👟
                 <img src="images/chunkyshoes.jpeg" alt="chunky white sneakers">
                 <span class="sale-label">SALE</span></div>
@@ -119,7 +118,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="footwear" data-name="retro skate shoes">
+        <div class="product-card" data-category="fashion" data-name="retro skate shoes">
             <div class="product-picture">
                 <img src="images/skatesneaker.jpeg" alt="retro skate shoes">
             </div>
@@ -132,7 +131,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="handbags" data-name="mini shoulder bag">
+        <div class="product-card" data-category="fashion" data-name="mini shoulder bag">
             <div class="product-picture">
                 <img src="images/bag.jpeg" alt="mini shoulder bag">
             </div>
@@ -145,7 +144,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="handbags" data-name="vintage leather satchel">
+        <div class="product-card" data-category="fashion" data-name="vintage leather satchel">
             <div class="product-picture">
                 <img src="images/satchel.jpeg" alt="vintage leather satchel">
             </div>
@@ -158,7 +157,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="jewellery" data-name="chunky chain necklace">
+        <div class="product-card" data-category="fashion" data-name="chunky chain necklace">
             <div class="product-picture">
                 <img src="images/chunkynecklace.jpeg" alt="chunky chain necklace">
             </div>
@@ -171,7 +170,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="jewellery" data-name="hoop earrings">
+        <div class="product-card" data-category="fashion" data-name="hoop earrings">
             <div class="product-picture">
                 <img src="images/hoopearrings.jpeg" alt="hoop earrings">
             </div>
@@ -262,6 +261,29 @@
         </div>
     </div>
 
+    <!-- WISHLIST MODAL -->
+    <div id="wishlistModal" class="wishlist-modal">
+        <div class="wishlist-content">
+            <span class="close-btn" onclick="closeWishlist()">&times;</span>
+            <h2>YOUR WISHLIST</h2>
+            <div id="wishlistItems"></div>
+        </div>
+    </div>
+
+    <!-- CART MODAL -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cartItems"></div>
+            <h3>Total: R<span id="cartTotal">0</span></h3>
+            <button onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+        </div>
+    </div>
+
+    <script src="Java Script/script.js"></script>
+</body>
+</html>
 
 
-            
+
