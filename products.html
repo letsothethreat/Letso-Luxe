@@ -12,14 +12,20 @@
         <div class="logo">
             LETSO <span>LUXE</span>
         </div>
-        <nav>
-            <a href="index.html">Home</a> 
-            <a href="products.html" class="active">Shop</a>
-            <a href="offers.html">Offers</a>
-            <a href="about.html">About</a> 
-            <a href="contact-us.html">Contact</a> 
-            <a href="#" onclick="showWishlist()">♥ WISHLIST <span id="wishlistCount">0</span></a>
-            <a href="#" onclick="showCart()">🛒 CART <span id="cartCount">0</span></a>
+        <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+        <nav class="nav-links">
+                <a href="index.html">Home</a> 
+                <a href="products.html" class="active">Shop</a>
+                <a href="offers.html">Offers</a>
+                <a href="about.html">About</a> 
+                <a href="contact-us.html">Contact</a> 
+                <a href="#" onclick="showWishlist()">♥ WISHLIST <span id="wishlistCount">0</span></a>
+                <a href="#" onclick="showCart()">🛒 CART <span id="cartCount">0</span></a>
+            </div>
         </nav>
     </header>
 
@@ -28,6 +34,8 @@
         <h1>SHOP</h1>
         <span>Find your next favourite piece.</span>
     </section>
+        </nav>
+    </header>
 
     <!-- SEARCH AND CART -->
     <section class="shop-tools">
@@ -39,9 +47,6 @@
                 onkeyup="searchProducts()">
             <button onclick="searchProducts()">SEARCH</button>
         </div>
-        <button class="cart-button" onclick="showCart()">
-            🛒 CART <span id="cartCount">0</span>
-        </button>
     </section>
 
     <div class="filter-buttons">
@@ -279,10 +284,17 @@
             <h2>YOUR CART</h2>
             <div id="cartItems"></div>
             <h3>Total: R<span id="cartTotal">0</span></h3>
-            <button onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+            <button onclick="checkoutToWhatsApp()">CHECKOUT ON WHATSAPP</button>
         </div>
     </div>
 
     <script src="Java Script/script.js"></script>
+    <div id="wishlistModal" class="cart-modal">
+  <div class="cart-content">
+    <span onclick="closeWishlist()">X</span>
+    <h2>YOUR WISHLIST</h2>
+    <div id="wishlistItems"></div>
+  </div>
+</div>
 </body>
 </html>
