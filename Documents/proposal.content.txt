@@ -1,0 +1,184 @@
+ 
+ 
+ 
+GROUP: 2 
+STUDENT NUMBER: ST10533815 
+NAME: Kokeletso Mphofela 
+SUBJECT CODE: WEDE5020 
+SUBJECT NAME: Web Development 
+ 
+LETSO LUXE PROPOSAL 
+----------------Page (0) Break----------------
+ pg5-6 
+9. References:  ...................................
+ pg5 
+8. Budget: ..........................................
+ pg5 
+7. Timelines and Milestones:  .............
+pg5 
+6. Technical Requirements:   ............
+pg5 
+5. Design and User experience: ............
+ ESENTIAL FEATURES 
+pg4 
+Functionality:            ..................
+4. Proposed Website Features And 
+ AREAS FOR IMPROVEMENT 
+ STRENGTHS AND WEAKNESSES OF THE WEDSITE 
+pg3
+3. Website Analysis:     ................... 
+ KEY PERFORMANCE INDICATORS 
+ GOALS FOR THE WEBSITE 
+pg2-3
+2. Website Goals and Objectives: ......... 
+ TARGET AUIDENCE 
+ MISSION AND VISION STATEMENTS 
+ HISTORY OF ORGANISATION 
+ NAME 
+pg2
+1. Organisation Overview:                ........... 
+ 
+Table of contents: 
+ 
+LETSO LUXE PROPOSAL 
+----------------Page (1) Break----------------
+customers can conveniently browse through the products available, purchase them, and learn 
+One of the major goals of the website is to establish a professional online store where the 
+2
+. Goals and Objectives of the Website 
+ 
+known as thrifting. 
+who like fashion and beauty products and online shopping at a lower pricing range. Specifically 
+The target market consists of teenagers and young adults between the ages of 16 and 35 years 
+Target Market 
+stylish products and an easy shopping experience. 
+To be among the leading online fashion and lifestyle brands in South Africa through provision of 
+Vision Statement 
+the experience of online shopping easy and fun. 
+OƯering quality and aƯordable products coupled with satisfying customer services and making 
+Mission Statement 
+the business expands, having a website will become necessary. 
+oƯered by the business, and at present the organisation does not have any website. However, as 
+beauty products. Social media marketing strategies have been used to advertise the products 
+fashion to clients. The products include fashion wear, handbags, footwear, jewellery, as well as 
+operation since 2026. The concept behind this business is to provide trendy yet aƯordable 
+Letso Luxe is a small company dealing in fashion and lifestyle products, which has been in 
+History of Organisation 
+1. Overview of Organisation 
+Project Proposal 1: Letso Luxe 
+ 
+ 
+ 
+ 
+----------------Page (2) Break----------------
+Luxe. 
+ About Us Page – Information about the business, its mission and uniqueness of Letso 
+place orders. 
+ Shopping Cart and Checkout – Customers will be able to add products to the cart and 
+example clothing, accessories, shoes, and beauty products.. 
+ Shop page – Where customers can shop for products according to categories, for 
+and current promotions. 
+ Homepage – An introduction to the business, showcasing featured items, new arrivals, 
+ 
+and pleasant for clients. The website will include the following pages and functions: 
+The proposed features of the Letso Luxe website will be made for making shopping convenient 
+4. Suggested Website Features and Functions 
+date with new products. 
+platform where its customers can shop and connect with the company, as well as stay up to 
+Creation of a website will eliminate the problems and will allow Letso Luxe to have one common 
+ 
+In addition, information may become hard to trace because of numerous posts being added. 
+full range of products available, compare prices and purchase their products through one place. 
+marketing, it suƯers from a number of drawbacks. Clients do not get an opportunity to see the 
+to promote the products and connect with the clients. Though social media can be helpful for 
+At present, there is no website for Letso Luxe. Social media platforms serve as primary means 
+3. Current Website Status 
+ 
+ Attracting return customers via promotions and special oƯers. 
+ Decrease the number of abandoned shopping carts. 
+ Get more client inquiries via the contact page. 
+ Increase online product sales. 
+ Increase the number of website visitors every month. 
+ 
+The success of the website will be evaluated based on the following KPIs: 
+ 
+products, viewing product descriptions, adding products to the cart and ordering them. 
+Us, and Special OƯers. Customers will have access to the features that allow searching for 
+Among the pages that will be used on the website, there will be Home, Shop, About Us, Contact 
+an online presence and getting new clients. 
+about the company. The development of the website is expected to assist Letso Luxe in creating 
+----------------Page (3) Break----------------
+ 
+Total                  R6350 
+Maintenance (per month)         R700 
+Web design and development        R4500 
+Web hosting               R950 
+Domain Name              R200 
+Item              Cost 
+8. Budget 
+ 
+10-12                  Test and make changes where needed. 
+7-9                   Build the website. 
+4-6                   Structure the website’s layout. 
+1-3                   Plan the website. 
+DAYS (PER 3 DAYS)         TASK 
+7. Timelines and Milestones 
+ Domain name e.g., www.letsoluxe.co.za 
+ Web hosting 
+ JavaScript 
+ CSS: to style the website and to make it aesthetically pleasing. 
+ HTML: to create the structure of web pages. 
+The website will be created using:  
+6. Technical Requirements 
+ 
+the top of every page so that customer can quickly move between categories (e.g. Shein). 
+will be shown in neat rows with visible images and prices. A navigation menu will be placed at 
+The home page will have a larger banner which highlights new arrivals or promos. The products 
+Layout and Design 
+ Layout: Simple navigation with clear product images and categories. 
+ Font: Arial 
+ Colours: Yellow and white 
+Letso Luxe website will have trendy, yet stylist designs corresponding to the image of the brand.  
+ 
+5. Website Design and User Experience 
+profiles. 
+ Contact Us Page – Contact form, email address, phone number, and social media 
+----------------Page (4) Break----------------
+ 
+ 
+ 
+ 
+WAxWp_rsIHak7ExoQ0Qx6BAgOEAE 
+2&sig=AOD64_0TInavmGhSNzghMNyYMJgUx2BWsA&q&nis=4&adurl&ved=2ahUKEwjC5ojljo2
+aFKnRr61XqpxUoGnXCg8ma8L82hfAN9XO48SzA9drzCKbn2USs&cce=2&category=acrcp_v1_3
+dhp3xgvbKMbXXz_eZQZIHV8zrTE7ycA2gLRe9JFBBtOrXKQ70-
+m9yKX8ruKKEKwPwmP7rQarykuzTBlAmKscr_klxFaKUz7caMQCyU6VXm-
+p9cL3McSjtF2ESKHMMTUmeeVm2WkZ5IovhlzPBYy09bm8bXLasS8aAwj6KHuwF5JdNMBNOmi
+mQ2rCPm3jerm1FTewTtKq_DDa69uCxoC2zQQAvD_BwE&cid=CAASugHkaBFiFeQtzvMr3nvKEb
+AxoCZWY&co=1&ase=2&gclid=CjwKCAjw4dDTBhAqEiwAkHYmSmYIL9ZwaE6O2lkerRpmEThm
+https://www.google.com/aclk?sa=L&ai=DChsSEwjHnI7ljo2WAxUEnoMHHUM1Kr0YACICCAEQ
+Accessed: Aug. 04, 2026. [Online]. Available: 
+[4]    I. Haim, ‘What Makes a Good Website: 13 Essential Elements for Success In 2026’, Blog. 
+i&w=540&h=360&hcb=2&ved=2ahUKEwiYsK6Ljo2WAxWJgf0HHb3xJjIQnPAOegQIYxAA 
+u9GM&tbnid=n0C1UfPfS7qTdM&vet=12ahUKEwiYsK6Ljo2WAxWJgf0HHb3xJjIQnPAOegQIYxAA..
+Fsearch%3Fk%3Dclothing%2Bstore&docid=7-xwMJAus-
+_visqTeQnMLvzfT3XBtDZWX9TNTlVLML6.jpg&imgrefurl=https%3A%2F%2Fstock.adobe.com%2
+mgurl=https%3A%2F%2Ft3.ftcdn.net%2Fjpg%2F03%2F05%2F92%2F84%2F360_F_305928424
+https://www.google.com/imgres?q=pictures%20for%20a%20clothing%20shop%20fictional&i
+2026. [Online]. Available: 
+Images – Browse 4,013,875 Stock Photos, Vectors ...’, stock.adobe.com. Accessed: Aug. 05, 
+[3]    Clothing Store Images – Browse 4,013,875 Stock Photos, Vectors, ‘Clothing Store 
+Wh_0HHcuoB_MQnPAOegQIQBAA 
+Wh_0HHcuoB_MQnPAOegQIQBAA..i&w=3200&h=2400&hcb=2&ved=2ahUKEwigluvQjo2WAxV
+websites&docid=Nzmj7MFbFWtB5M&tbnid=eouiu5sbnS7fBM&vet=12ahUKEwigluvQjo2WAxV
+Ffashion-
+e42c71158ae6%2F&imgrefurl=https%3A%2F%2Fwww.sitebuilderreport.com%2Finspiration%2
+2F%2Fucarecdn.com%2Fa193d453-4f4c-422d-81fc-
+https://www.google.com/imgres?q=how%20clothing%20websites%20look&imgurl=https%3A%
+You Jealous’, www.sitebuilderreport.com. Accessed: Aug. 04, 2026. [Online]. Available: 
+[2]    40+ Fashion Websites That Will Make You Jealous, ‘40+ Fashion Websites That Will Make 
+Computer Science (EIECS). 2021.
+ 
+[1] IEEE StaƯ, 2021 International Conference on Electronic Information Engineering and 
+9.
+----------------Page (5) Break----------------

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Letso Luxe offers affordable, elegant fashion and lifestyle products for everyday sophistication in South Africa.">
+    <meta name="keywords" content="Letso Luxe, fashion, affordable style, South African boutique, women fashion">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Letso Luxe">
+    <meta name="theme-color" content="#f4d35e">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Letso Luxe | Affordable Fashion & Lifestyle">
+    <meta property="og:description" content="Trendy, affordable fashion and lifestyle products made for your unique style.">
+    <meta property="og:image" content="images/dress.jpg">
+    <meta property="og:url" content="https://www.letsoluxe.co.za/">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Letso Luxe">
+    <meta name="twitter:description" content="Affordable fashion and lifestyle essentials for every day.">
+    <link rel="canonical" href="https://www.letsoluxe.co.za/">
+    <meta name="geo.region" content="ZA">
+    <meta name="geo.placename" content="South Africa">
+    <title>Letso Luxe | Affordable Fashion & Lifestyle</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FashionStore",
+          "name": "Letso Luxe",
+          "image": "https://www.letsoluxe.co.za/images/dress.jpg",
+          "description": "Affordable fashion and lifestyle products for everyday sophistication.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "ZA"
+          },
+          "url": "https://www.letsoluxe.co.za/",
+          "sameAs": []
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="logo">
+            LETSO <span>LUXE</span>
+        </div>
+
+        <nav>
+            <button id="hamburger" class="hamburger">☰</button>
+
+            <div id="navLinks" class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Shop</a>
+                <a href="offers.html">Offers</a>
+                <a href="about.html">About</a>
+                <a href="contact-us.html">Contact</a>
+                <a href="wishlist.html">♡ Wishlist <span id="wishlistCount">0</span></a>
+                <a href="#" onclick="openCart(); return false;">🛒 CART <span id="cartCount">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    
+    <section class="hero">
+        <div class="hero-text">
+            <p class="hero-small">WELCOME TO</p>
+            <h1>LETSO LUXE</h1>
+            <p>
+                Trendy, affordable fashion and lifestyle products 
+                made for your unique style.
+            </p>
+            <a href="products.html" class="yellow-button">
+                SHOP NOW
+            </a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>SHOP BY CATEGORY</h2>
+        <div class="category-grid">
+            <a href="products.html" class="category-card">
+                <h3>Beauty</h3>
+                <p>Makeup, Skincare & More</p>
+            </a>
+            <a href="products.html" class="category-card">
+                <h3>Fashion</h3>
+                <p>Clothes & Accessories</p>
+            </a>
+            <a href="products.html" class="category-card">
+                <h3>Home</h3>
+                <p>Lifestyle & Decor</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="section-heading">
+            <p class="yellow-heading">POPULAR PICKS</p>
+            <h2>SHOP THE LATEST</h2>
+        </div>
+
+        <div class="product-grid">
+            <article class="product-card">
+                <button
+                    class="heart-btn"
+                    type="button"
+                    data-id="luxury-blazer"
+                    onclick="toggleWishlist('luxury-blazer','Luxury Blazer','R450','images/blazer.jpg')">
+                    ♡
+                </button>
+                <div class="product-image">
+                    <img src="images/blazer.jpg" alt="Vintage Band Tee">
+                </div>
+                <div class="product-info">
+                    <h3>Luxury Blazer</h3>
+                    <p>R120</p>
+                    <button type="button" class="add-to-cart" onclick="addToCart('luxury-blazer','Luxury Blazer',1250,'images/blazer.jpg')">
+                        ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <button
+                    class="heart-btn"
+                    type="button"
+                    data-id="statement-set"
+                    onclick="toggleWishlist('statement-set','Statement Set','R1,500','images/dress.jpg')">
+                    ♡
+                </button>
+                <div class="product-image">
+                    <img src="images/dress.jpg" alt="Statement Set">
+                </div>
+                <div class="product-info">
+                    <h3>Statement Set</h3>
+                    <p>R1,500</p>
+                    <button type="button" class="add-to-cart" onclick="addToCart('statement-set','Statement Set',1500,'images/dress.jpg')">
+                        ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <button
+                    class="heart-btn"
+                    type="button"
+                    data-id="minimal-heels"
+                    onclick="toggleWishlist('minimal-heels','Minimal Heels','R450','images/heels.jpg')">
+                    ♡
+                </button>
+                <div class="product-image">
+                    <img src="images/heels.jpg" alt="Minimal Heels ">
+                </div>
+                <div class="product-info">
+                    <h3>Minimal Heels</h3>
+                    <p>R450</p>
+                    <button type="button" class="add-to-cart" onclick="addToCart('minimal-heels','Minimal Heels',980,'images/heels.jpg')">
+                        ADD TO CART
+                    </button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <button
+                    class="heart-btn"
+                    type="button"
+                    data-id="cotton-tote-bag"
+                    onclick="toggleWishlist('cotton-tote-bag','Cotton Tote Bag','R40','images/tote.jpg')">
+                    ♡
+                </button>
+                <div class="product-image">
+                    <img src="images/tote.jpg" alt="Cotton Tote Bag">
+                </div>
+                <div class="product-info">
+                    <h3>Cotton Tote Bag</h3>
+                    <p>R40</p>
+                    <button type="button" class="add-to-cart" onclick="addToCart('cotton-tote-bag','Cotton Tote Bag',450,'images/tote.jpg')">
+                        ADD TO CART
+                    </button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            LETSO LUXE
+        </div>
+        <p>
+            Affordable fashion and the art of sophistication.
+        </p>
+        <p class="copyright">
+            © 2026 Letso Luxe. All Rights Reserved.
+        </p>
+    </footer>
+
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cartItems"></div>
+            <h3>Total: R<span id="cartTotal">0</span></h3>
+            <button onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+        </div>
+    </div>
+
+<script src="Java Script/script.js" defer></script>
+<script>
+    const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  const productSearch = document.getElementById('productSearch');
+        if (productSearch) {
+            productSearch.addEventListener('input', function () {
+                const term = this.value.toLowerCase().trim();
+                document.querySelectorAll('.product-card').forEach(card => {
+                    const match = card.dataset.name.toLowerCase().includes(term);
+                    card.style.display = match ? 'block' : 'none';
+                });
+            });
+        }
+</script>
+</body>
+</html>

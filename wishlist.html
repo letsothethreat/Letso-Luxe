@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letso Luxe | Wishlist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f3ee;
+            color: #1f1f1f;
+        }
+        img { display: block; width: 100%; height: auto; }
+        a { text-decoration: none; color: inherit; }
+
+        .wishlist-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .wishlist-card {
+            background: #fff;
+            border: 1px solid #efdcc6;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 24px rgba(34, 24, 18, 0.04);
+        }
+
+        .wishlist-image {
+            position: relative;
+            height: 260px;
+            background: #f5eadf;
+        }
+
+        .wishlist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .wishlist-remove {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.92);
+            color: #d72638;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .wishlist-info {
+            padding: 18px;
+        }
+
+        .wishlist-info h3 {
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+        }
+
+        .wishlist-info .price {
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        .wishlist-info button {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            background: #111;
+            color: #fff;
+            padding: 12px 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .empty-state {
+            background: #fff;
+            border: 1px solid #efdcc6;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            color: #4a4a4a;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">LETSO <span>LUXE</span></div>
+
+        <nav>
+            <button id="hamburger" class="hamburger">☰</button>
+            <div id="navLinks" class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Shop</a>
+                <a href="offers.html">Offers</a>
+                <a href="about.html">About</a>
+                <a href="contact-us.html">Contact</a>
+                <a href="wishlist.html" class="active">♡ Wishlist <span id="wishlistCount">0</span></a>
+                <a href="#" onclick="showCart(); return false;">🛒 CART <span id="cartCount">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <p>YOUR SAVED PIECES</p>
+        <h1>WISHLIST</h1>
+        <span>Everything you loved, ready to shop.</span>
+    </section>
+
+    <main class="wishlist-page">
+        <div id="wishlistItems" class="wishlist-grid"></div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">LETSO LUXE</div>
+        <p>Affordable fashion and the art of sophistication.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="offers.html">Offers</a>
+            <a href="about.html">About</a>
+            <a href="contact-us.html">Contact</a>
+        </div>
+        <p class="copyright">© 2026 Letso Luxe. All Rights Reserved.</p>
+    </footer>
+
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cartItems"></div>
+            <h3>Total: R<span id="cartTotal">0</span></h3>
+            <button onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+        </div>
+    </div>
+
+    <script>
+        const WISHLIST_KEY = "letsoWishlist";
+        const CART_KEY = "letsoCart";
+
+        function getStoredList(key) {
+            try {
+                return JSON.parse(localStorage.getItem(key)) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function saveStoredList(key, list) {
+            localStorage.setItem(key, JSON.stringify(list));
+        }
+
+        function updateWishlistBadge() {
+            const el = document.getElementById("wishlistCount");
+            if (el) el.textContent = getStoredList(WISHLIST_KEY).length;
+        }
+
+        function updateCartBadge() {
+            const cart = getStoredList(CART_KEY);
+            const total = cart.reduce((sum, item) => sum + (Number(item.quantity) || 1), 0);
+            const el = document.getElementById("cartCount");
+            if (el) el.textContent = total;
+        }
+
+        function addToCart(name, price, image = "") {
+            const cart = getStoredList(CART_KEY);
+            const existing = cart.find(item => item.name === name);
+
+            if (existing) {
+                existing.quantity = (Number(existing.quantity) || 1) + 1;
+            } else {
+                cart.push({ name, price: Number(price || 0), image, quantity: 1 });
+            }
+
+            saveStoredList(CART_KEY, cart);
+            updateCartBadge();
+        }
+
+        function renderWishlist() {
+            const wishlist = getStoredList(WISHLIST_KEY);
+            const container = document.getElementById("wishlistItems");
+
+            if (!container) return;
+
+            if (!wishlist.length) {
+                container.innerHTML = '<div class="empty-state">Your wishlist is empty.</div>';
+                updateWishlistBadge();
+                return;
+            }
+
+            container.innerHTML = wishlist.map(item => `
+                <article class="wishlist-card">
+                    <div class="wishlist-image">
+                        <button class="wishlist-remove" type="button" data-name="${item.name}" aria-label="Remove from wishlist">♥</button>
+                        <img src="${item.image || 'images/default-product.jpg'}" alt="${item.name}">
+                    </div>
+                    <div class="wishlist-info">
+                        <h3>${item.name}</h3>
+                        <div class="price">R${Number(item.price || 0).toLocaleString("en-ZA")}</div>
+                        <button type="button" data-name="${item.name}" data-price="${item.price}">ADD TO CART</button>
+                    </div>
+                </article>
+            `).join("");
+
+            document.querySelectorAll(".wishlist-remove").forEach((button) => {
+                button.addEventListener("click", () => {
+                    const updated = getStoredList(WISHLIST_KEY).filter(item => item.name !== button.dataset.name);
+                    saveStoredList(WISHLIST_KEY, updated);
+                    updateWishlistBadge();
+                    renderWishlist();
+                });
+            });
+
+            document.querySelectorAll(".wishlist-info button").forEach((button) => {
+                button.addEventListener("click", () => {
+                    addToCart(button.dataset.name, button.dataset.price);
+                });
+            });
+
+            updateWishlistBadge();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateWishlistBadge();
+            updateCartBadge();
+            renderWishlist();
+        });
+    </script>
+</body>
+</html>

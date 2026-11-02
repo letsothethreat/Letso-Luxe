@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover special offers, seasonal discounts, and limited-time deals at Letso Luxe.">
+    <meta name="keywords" content="Letso Luxe offers, fashion discounts, seasonal sale, boutique deals">
+    <meta name="robots" content="index, follow">
+    <title>Letso Luxe | Offers</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">LETSO <span>LUXE</span></div>
+
+        <nav>
+            <button id="hamburger" class="hamburger">☰</button>
+            <div id="navLinks" class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Shop</a>
+                <a href="offers.html" class="active">Offers</a>
+                <a href="about.html">About</a>
+                <a href="contact-us.html">Contact</a>
+                <a href="wishlist.html">♡ Wishlist <span id="wishlistCount">0</span></a>
+                <a href="#" onclick="showCart(); return false;">🛒 CART <span id="cartCount">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <p>LIMITED-TIME DEALS</p>
+        <h1>OFFERS</h1>
+        <span>Fresh finds and sale favourites.</span>
+    </section>
+
+    <section class="offers-grid">
+        <article class="offer-card">
+            <div class="product-picture">
+                <button class="heart-btn" type="button" data-name="Vintage Band Tee" data-price="120" data-image="images/vintagetee.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/vintagetee.jpeg" alt="Vintage Band Tee">
+            </div>
+            <div class="offer-body">
+                <h3>Vintage Band Tee</h3>
+                <p>Classic vintage style, easy to style all year.</p>
+                <div class="price">R120 <del>R160</del></div>
+                <button class="add-button" onclick="addToCart('Vintage Band Tee', 120)">ADD TO CART</button>
+            </div>
+        </article>
+
+        <article class="offer-card">
+            <div class="product-picture">
+                <button class="heart-btn" type="button" data-name="Oversized Graphic Hoodie" data-price="200" data-image="images/hoodie.png" aria-label="Add to wishlist">♡</button>
+                <img src="images/hoodie.png" alt="Oversized Graphic Hoodie">
+            </div>
+            <div class="offer-body">
+                <h3>Oversized Graphic Hoodie</h3>
+                <p>Streetwear comfort with a clean premium feel.</p>
+                <div class="price">R200</div>
+                <button class="add-button" onclick="addToCart('Oversized Graphic Hoodie', 200)">ADD TO CART</button>
+            </div>
+        </article>
+
+        <article class="offer-card">
+            <div class="product-picture">
+                <button class="heart-btn" type="button" data-name="Distressed Denim Jacket" data-price="300" data-image="images/jeanjacket.png" aria-label="Add to wishlist">♡</button>
+                <img src="images/jeanjacket.png" alt="Distressed Denim Jacket">
+            </div>
+            <div class="offer-body">
+                <h3>Distressed Denim Jacket</h3>
+                <p>Layered texture and bold shape for everyday wear.</p>
+                <div class="price">R300</div>
+                <button class="add-button" onclick="addToCart('Distressed Denim Jacket', 300)">ADD TO CART</button>
+            </div>
+        </article>
+
+        <article class="offer-card">
+            <div class="product-picture">
+                <button class="heart-btn" type="button" data-name="Hoop Earrings" data-price="40" data-image="images/hoopearrings.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/hoopearrings.jpeg" alt="Hoop Earrings">
+            </div>
+            <div class="offer-body">
+                <h3>Hoop Earrings</h3>
+                <p>Simple hoops with an elevated luxe touch.</p>
+                <div class="price">R40</div>
+                <button class="add-button" onclick="addToCart('Hoop Earrings', 40)">ADD TO CART</button>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <div class="footer-logo">LETSO LUXE</div>
+        <p>Affordable fashion and the art of sophistication.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a> 
+            <a href="products.html">Shop</a>
+            <a href="offers.html">Offers</a>
+            <a href="about.html">About</a> 
+            <a href="contact.html">Contact</a> 
+        </div>
+        <p class="copyright">© 2026 Letso Luxe. All Rights Reserved.</p>
+    </footer>
+
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cartItems"></div>
+            <h3>Total: R<span id="cartTotal">0</span></h3>
+            <button onclick="checkout()">CHECKOUT ON WHATSAPP</button>
+        </div>
+    </div>
+
+    <script src="Java Script/script.js"></script>
+</body>
+</html>

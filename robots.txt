@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Public pages
+Allow: /index.html
+Allow: /products.html
+Allow: /offers.html
+Allow: /about.html
+Allow: /contact-us.html
+Allow: /wishlist.html
+
+Sitemap: https://www.letsoluxe.co.za/sitemap.xml

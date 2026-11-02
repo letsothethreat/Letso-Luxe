@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Letso Luxe products including fashion essentials, accessories, and statement pieces at affordable prices.">
+    <meta name="keywords" content="Letso Luxe products, fashion shopping, boutique clothing, accessories">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Letso Luxe">
+    <meta name="theme-color" content="#f4d35e">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shop Letso Luxe | Fashion Products">
+    <meta property="og:description" content="Shop fashion, beauty, home, and accessories at Letso Luxe.">
+    <meta property="og:image" content="images/vintagetee.jpeg">
+    <meta property="og:url" content="https://www.letsoluxe.co.za/products.html">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shop Letso Luxe">
+    <meta name="twitter:description" content="Browse affordable luxury fashion and lifestyle finds.">
+    <link rel="canonical" href="https://www.letsoluxe.co.za/products.html">
+    <meta name="geo.region" content="ZA">
+    <meta name="geo.placename" content="South Africa">
+    <title>Shop Letso Luxe | Fashion Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .shop-toolbar {
+            max-width: 1200px;
+            margin: 24px auto 0;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .category-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            background: #fff;
+            border: 1px solid #e5d3c3;
+            border-radius: 999px;
+            padding: 9px 14px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.25s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #111;
+            border-color: #111;
+            color: #fff;
+        }
+
+        .shop-search,
+        .shop-sort {
+            min-width: 180px;
+            flex: 1;
+            max-width: 260px;
+        }
+
+        .shop-search input,
+        .shop-sort select {
+            width: 100%;
+            padding: 11px 14px;
+            border-radius: 10px;
+            border: 1px solid #e5d3c3;
+            background: #fff;
+            font: inherit;
+        }
+
+        .product-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
+
+        .product-picture {
+            cursor: pointer;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 80vw;
+            max-height: 80vh;
+            animation: fadeIn 0.25s ease;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 14px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -16px;
+            right: -16px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">LETSO <span>LUXE</span></div>
+
+        <nav>
+            <button id="hamburger" class="hamburger">☰</button>
+            <div id="navLinks" class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Shop</a>
+                <a href="offers.html">Offers</a>
+                <a href="about.html">About</a>
+                <a href="contact-us.html">Contact</a>
+                <a href="wishlist.html">♡ Wishlist <span id="wishlistCount">0</span></a>
+                <a href="#" onclick="openCart(); return false;">🛒 CART <span id="cartCount">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <p>LETSO LUXE COLLECTION</p>
+        <h1>SHOP</h1>
+        <span>Find your next favourite piece.</span>
+    </section>
+
+    <!-- SEARCH AND CART -->
+    <section class="shop-tools">
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for a product..."
+                onkeyup="searchProducts()">
+            <button onclick="searchProducts()">SEARCH</button>
+        </div>
+    </section>
+
+    <section class="shop-toolbar">
+        <div class="category-bar" aria-label="Product categories">
+            <button class="filter-btn active" type="button" data-filter="all">ALL</button>
+            <button class="filter-btn" type="button" data-filter="fashion">FASHION</button>
+            <button class="filter-btn" type="button" data-filter="beauty">BEAUTY</button>
+            <button class="filter-btn" type="button" data-filter="accessories">ACCESSORIES</button>
+            <button class="filter-btn" type="button" data-filter="home">HOME</button>
+        </div>
+
+        <div class="shop-search">
+            <input id="productSearch" type="text" placeholder="Search by product name..." aria-label="Search products" />
+        </div>
+
+        <div class="shop-sort">
+            <select id="productSort" title="Sort products" aria-label="Sort products">
+                <option value="name-asc">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
+                <option value="price-asc">Price Low-High</option>
+                <option value="price-desc">Price High-Low</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="shop-products">
+        <!-- CLOTHING -->
+        <div class="product-card" data-name="Vintage Band Tee" data-price="120" data-image="images/vintagetee.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Vintage Band Tee" data-price="120" data-image="images/vintagetee.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/vintagetee.jpeg" alt="Vintage Band Tee" onclick="openLightbox('images/vintagetee.jpeg')">
+                <span class="sale-label">SALE</span>
+            </div>
+
+            <div class="product-details">
+                <p class="product-category">CLOTHING</p>
+                <h3>Vintage Band Tee</h3>
+                <p class="product-description">A trendy vintage-inspired tee that can be styled with jeans or cargo pants.</p>
+                <div class="price">R120 <del>R160</del></div>
+                <button class="add-button" onclick="addToCart('vintage-band-tee','Vintage Band Tee',120,'images/vintagetee.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Oversized Graphic Hoodie" data-price="200" data-image="images/hoodie.png">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Oversized Graphic Hoodie" data-price="200" data-image="images/hoodie.png" aria-label="Add to wishlist">♡</button>
+                <img src="images/hoodie.png" alt="Oversized Graphic Hoodie" onclick="openLightbox('images/hoodie.png')">
+            </div>
+
+            <div class="product-details">
+                <p class="product-category">CLOTHING</p>
+                <h3>Oversized Graphic Hoodie</h3>
+                <p class="product-description">A comfortable oversized hoodie for a relaxed streetwear style.</p>
+                <div class="price">R200</div>
+                <button class="add-button" onclick="addToCart('oversized-graphic-hoodie','Oversized Graphic Hoodie',200,'images/hoodie.png')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Distressed Denim Jacket" data-price="300" data-image="images/jeanjacket.png">
+            <div class="product-picture">
+                <button
+                    class="heart-btn"
+                    type="button"
+                    data-name="Distressed Denim Jacket"
+                    data-price="300"
+                    data-image="images/jeanjacket.png"
+                    aria-label="Add to wishlist">
+                    ♡
+                </button>
+                <img src="images/jeanjacket.png" alt="Distressed Denim Jacket" onclick="openLightbox('images/jeanjacket.png')">
+            </div>
+
+            <div class="product-details">
+                <p class="product-category">CLOTHING</p>
+                <h3>Distressed Denim Jacket</h3>
+                <p class="product-description">A denim jacket designed to give your outfit an edgy look.</p>
+                <div class="price">R300</div>
+                <button class="add-button" onclick="addToCart('distressed-denim-jacket','Distressed Denim Jacket',300,'images/jeanjacket.png')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Baggy Cargo Pants" data-price="180" data-image="images/cargopants.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Baggy Cargo Pants" data-price="180" data-image="images/cargopants.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/cargopants.jpeg" alt="Baggy Cargo Pants" onclick="openLightbox('images/cargopants.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">CLOTHING</p>
+                <h3>Baggy Cargo Pants</h3>
+                <p class="product-description">Comfortable cargo pants for a casual streetwear outfit.</p>
+                <div class="price">R180</div>
+                <button class="add-button" onclick="addToCart('baggy-cargo-pants','Baggy Cargo Pants',180,'images/cargopants.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <!-- FOOTWEAR -->
+        <div class="product-card" data-name="Chunky White Sneakers" data-price="1200" data-image="images/chunkyshoes.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Chunky White Sneakers" data-price="1200" data-image="images/chunkyshoes.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/chunkyshoes.jpeg" alt="Chunky White Sneakers" onclick="openLightbox('images/chunkyshoes.jpeg')">
+                <span class="sale-label">SALE</span>
+            </div>
+            <div class="product-details">
+                <p class="product-category">FOOTWEAR</p>
+                <h3>Chunky White Sneakers</h3>
+                <p class="product-description">Everyday sneakers that add a trendy touch to your outfit.</p>
+                <div class="price">R1200 <del>R1600</del></div>
+                <button class="add-button" onclick="addToCart('chunky-white-sneakers','Chunky White Sneakers',1200,'images/chunkyshoes.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Retro Skate Shoes" data-price="220" data-image="images/skatesneaker.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Retro Skate Shoes" data-price="220" data-image="images/skatesneaker.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/skatesneaker.jpeg" alt="Retro Skate Shoes" onclick="openLightbox('images/skatesneaker.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">FOOTWEAR</p>
+                <h3>Retro Skate Shoes</h3>
+                <p class="product-description">Casual shoes inspired by classic skate fashion.</p>
+                <div class="price">R220</div>
+                <button class="add-button" onclick="addToCart('retro-skate-shoes','Retro Skate Shoes',220,'images/skatesneaker.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <!-- HANDBAGS -->
+        <div class="product-card" data-name="Mini Shoulder Bag" data-price="110" data-image="images/bag.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Mini Shoulder Bag" data-price="110" data-image="images/bag.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/bag.jpeg" alt="Mini Shoulder Bag" onclick="openLightbox('images/bag.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">HANDBAGS</p>
+                <h3>Mini Shoulder Bag</h3>
+                <p class="product-description">A compact and stylish bag for everyday use.</p>
+                <div class="price">R110</div>
+                <button class="add-button" onclick="addToCart('mini-shoulder-bag','Mini Shoulder Bag',110,'images/bag.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Vintage Leather Satchel" data-price="260" data-image="images/satchel.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Vintage Leather Satchel" data-price="260" data-image="images/satchel.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/satchel.jpeg" alt="Vintage Leather Satchel" onclick="openLightbox('images/satchel.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">HANDBAGS</p>
+                <h3>Vintage Leather Satchel</h3>
+                <p class="product-description">A classic bag suitable for everyday fashion and special occasions.</p>
+                <div class="price">R260</div>
+                <button class="add-button" onclick="addToCart('vintage-leather-satchel','Vintage Leather Satchel',260,'images/satchel.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <!-- JEWELLERY -->
+        <div class="product-card" data-name="Chunky Chain Necklace" data-price="80" data-image="images/chunkynecklace.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Chunky Chain Necklace" data-price="80" data-image="images/chunkynecklace.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/chunkynecklace.jpeg" alt="Chunky Chain Necklace" onclick="openLightbox('images/chunkynecklace.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">JEWELLERY</p>
+                <h3>Chunky Chain Necklace</h3>
+                <p class="product-description">A statement necklace for creating an eye-catching outfit.</p>
+                <div class="price">R80</div>
+                <button class="add-button" onclick="addToCart('chunky-chain-necklace','Chunky Chain Necklace',80,'images/chunkynecklace.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Hoop earrings" data-price="40" data-image="images/hoopearrings.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Hoop earrings" data-price="40" data-image="images/hoopearrings.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/hoopearrings.jpeg" alt="Hoop earrings" onclick="openLightbox('images/hoopearrings.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">JEWELLERY</p>
+                <h3>Hoop earrings</h3>
+                <p class="product-description">Simple hoops, endless style.</p>
+                <div class="price">R40</div>
+                <button class="add-button" onclick="addToCart('hoop-earrings','Hoop earrings',40,'images/hoopearrings.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+         <!-- BEAUTY PRODUCTS -->
+         <div class="product-card" data-name="Vitamin C Glow Serum" data-price="100" data-image="images/serum.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Vitamin C Glow Serum" data-price="100" data-image="images/serum.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/serum.jpeg" alt="Vitamin C Glow Serum" onclick="openLightbox('images/serum.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">BEAUTY</p>
+                <h3>Vitamin C Glow Serum</h3>
+                <p class="product-description">Brightens skin and gives a healthy radiant glow</p>
+                <div class="price">R100</div>
+                <button class="add-button" onclick="addToCart('vitamin-c-glow-serum','Vitamin C Glow Serum',100,'images/serum.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Matte Luxe Lipstick" data-price="180" data-image="images/lipstick.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Matte Luxe Lipstick" data-price="180" data-image="images/lipstick.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/lipstick.jpeg" alt="Matte Luxe Lipstick" onclick="openLightbox('images/lipstick.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">BEAUTY</p>
+                <h3>Matte Luxe Lipstick</h3>
+                <p class="product-description">Long lasting matte lipstick in 5 luxe shades</p>
+                <div class="price">R180</div>
+                <button class="add-button" onclick="addToCart('matte-luxe-lipstick','Matte Luxe Lipstick',180,'images/lipstick.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Luxe Signature Perfume" data-price="450" data-image="images/perfume.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Luxe Signature Perfume" data-price="450" data-image="images/perfume.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/perfume.jpeg" alt="Luxe Signature Perfume" onclick="openLightbox('images/perfume.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">BEAUTY</p>
+                <h3>Luxe Signature Perfume</h3>
+                <p class="product-description">Elegant fragrance with notes of vanilla and jasmine</p>
+                <div class="price">R450</div>
+                <button class="add-button" onclick="addToCart('luxe-signature-perfume','Luxe Signature Perfume',450,'images/perfume.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+        
+        <!-- HOME PRODUCTS -->
+        <div class="product-card" data-name="Luxury Scented Candle" data-price="70" data-image="images/candle.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Luxury Scented Candle" data-price="70" data-image="images/candle.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/candle.jpeg" alt="Luxury Scented Candle" onclick="openLightbox('images/candle.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">HOME</p>
+                <h3>Luxury Scented Candle</h3>
+                <p class="product-description">Soy candle with calming lavender and vanilla scent</p>
+                <div class="price">R70</div>
+                <button class="add-button" onclick="addToCart('luxury-scented-candle','Luxury Scented Candle',70,'images/candle.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Velvet Throw Blanket" data-price="180" data-image="images/throw.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Velvet Throw Blanket" data-price="180" data-image="images/throw.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/throw.jpeg" alt="Velvet Throw Blanket" onclick="openLightbox('images/throw.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">HOME</p>
+                <h3>Velvet Throw Blanket</h3>
+                <p class="product-description">Soft luxury throw for your couch or bedroom</p>
+                <div class="price">R180</div>
+                <button class="add-button" onclick="addToCart('velvet-throw-blanket','Velvet Throw Blanket',180,'images/throw.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-name="Gold Ceramic Vase" data-price="140" data-image="images/vase.jpeg">
+            <div class="product-picture">
+                <button class="heart-btn" data-name="Gold Ceramic Vase" data-price="140" data-image="images/vase.jpeg" aria-label="Add to wishlist">♡</button>
+                <img src="images/vase.jpeg" alt="Gold Ceramic Vase" onclick="openLightbox('images/vase.jpeg')">
+            </div>
+            <div class="product-details">
+                <p class="product-category">HOME</p>
+                <h3>Gold Ceramic Vase</h3>
+                <p class="product-description">Modern decor piece to elevate any room</p>
+                <div class="price">R140</div>
+                <button class="add-button" onclick="addToCart('gold-ceramic-vase','Gold Ceramic Vase',140,'images/vase.jpeg')">ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" aria-modal="true" role="dialog">
+        <div class="lightbox-content">
+            <button class="lightbox-close" type="button" aria-label="Close image">&times;</button>
+            <img id="lightboxImage" src="" alt="Expanded product view">
+        </div>
+    </div>
+
+    <!-- CART MODAL -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>YOUR CART</h2>
+            <div id="cartItems"></div>
+            <h3>Total: R<span id="cartTotal">0</span></h3>
+            <button onclick="checkoutToWhatsApp()">CHECKOUT ON WHATSAPP</button>
+        </div>
+    </div>
+
+    <script src="Java Script/script.js" defer></script>
+    <script>
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = imageSrc;
+            lightbox.classList.add('open');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('open');
+        }
+
+        document.querySelectorAll('.lightbox-close').forEach(function (button) {
+            button.addEventListener('click', closeLightbox);
+        });
+
+        document.getElementById('lightbox')?.addEventListener('click', function (event) {
+            if (event.target === this) closeLightbox();
+        });
+    </script>
+</body>
+</html>

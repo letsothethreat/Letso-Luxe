@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letso Luxe | About</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f3ee;
+            color: #1f1f1f;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .about-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-image {
+            background: #e7d8ca;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 420px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-copy h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+
+        .about-copy p {
+            line-height: 1.8;
+            color: #3b3b3b;
+            margin-bottom: 16px;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(120px, 1fr));
+            gap: 16px;
+            margin-top: 26px;
+        }
+
+        .value-box {
+            background: #fff;
+            border: 1px solid #eadac9;
+            border-radius: 12px;
+            padding: 18px 12px;
+            text-align: center;
+        }
+
+        .value-box strong {
+            display: block;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .faq-box {
+            margin-top: 50px;
+            background: #fff;
+            border: 1px solid #eadac9;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .faq-box h3 {
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .faq-item {
+            border-top: 1px solid #eee;
+            padding: 16px 0;
+        }
+
+        .faq-item h4 {
+            margin: 0 0 8px;
+            font-size: 1.06rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            line-height: 1.7;
+            color: #4a4a4a;
+        }
+
+        @media (max-width: 800px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-values {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">LETSO <span>LUXE</span></div>
+
+        <nav>
+            <button id="hamburger" class="hamburger">☰</button>
+            <div id="navLinks" class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Shop</a>
+                <a href="offers.html">Offers</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact-us.html">Contact</a>
+                <a href="wishlist.html">♡ Wishlist <span id="wishlistCount">0</span></a>
+                <a href="#" onclick="showCart(); return false;">🛒 CART <span id="cartCount">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <p>OUR STORY</p>
+        <h1>ABOUT US</h1>
+        <span>Style, comfort, and confidence in every detail.</span>
+    </section>
+
+    <main class="about-content">
+        <section class="about-grid">
+            <div class="about-copy">
+                <h2>Fashion built for everyday confidence.</h2>
+                <p>
+                    Letso Luxe is a contemporary fashion brand designed for women who want to look polished,
+                    feel comfortable, and express their individuality through every outfit.
+                </p>
+                <p>
+                    Our collections bring together premium basics, statement pieces, and carefully curated
+                    accessories to create looks that transition seamlessly from work to weekend.
+                </p>
+
+                <div class="about-values">
+                    <div class="value-box">
+                        <strong>2K+</strong>
+                        <span>Happy shoppers</span>
+                    </div>
+                    <div class="value-box">
+                        <strong>120+</strong>
+                        <span>Curated pieces</span>
+                    </div>
+                    <div class="value-box">
+                        <strong>4.9/5</strong>
+                        <span>Customer rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <img src="images/about-fashion.png" alt="Letso Luxe fashion styling">
+            </div>
+        </section>
+
+        <section class="faq-box">
+            <h3>Frequently asked questions</h3>
+
+            <div class="faq-item">
+                <h4>What is Letso Luxe?</h4>
+                <p>Letso Luxe is a fashion boutique focused on stylish, affordable pieces that combine comfort and elegance.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Do you offer delivery?</h4>
+                <p>Yes, we offer delivery options for our customers across South Africa.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I shop for special offers?</h4>
+                <p>Absolutely. Visit our offers page to view all current promotions and seasonal discounts.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">LETSO LUXE</div>
+        <p>Affordable fashion and the art of sophistication.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="offers.html">Offers</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p class="copyright">© 2026 Letso Luxe. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

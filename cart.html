@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - LETSO LUXE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body{font-family:Inter,sans-serif;background:#fff;margin:0}
+    .cart-header{display:flex;justify-content:space-between;padding:20px 5%;border-bottom:1px solid #eee;align-items:center}
+    .cart-header a{text-decoration:none;color:#000;font-weight:bold}
+    .cart-container{max-width:1000px;margin:30px auto;padding:0 20px;display:flex;gap:30px}
+    .cart-left{flex:2}
+    .cart-right{flex:1}
+    .cart-item{display:flex;gap:15px;padding:18px;background:#fafafa;border-radius:12px;margin-bottom:15px;align-items:center}
+    .cart-item img{width:90px;height:90px;object-fit:cover;border-radius:10px;background:#eee}
+    .cart-item-info{flex:1}
+    .qty-controls{display:flex;gap:8px;align-items:center;margin-top:8px}
+    .qty-controls button{width:32px;height:32px;border:1px solid #ddd;background:#fff;cursor:pointer;border-radius:20px;font-weight:bold}
+    .qty-controls span{width:20px;text-align:center;font-weight:bold}
+    .remove-btn{background:none;border:none;color:#d33;cursor:pointer;font-size:13px;margin-left:10px}
+    .order-box{background:#fff;border:1px solid #eee;padding:20px;border-radius:12px;position:sticky;top:20px}
+    .checkout-btn{width:100%;background:#1f8f4a;color:#fff;border:none;padding:15px;border-radius:30px;font-weight:bold;cursor:pointer;margin-top:15px}
+  </style>
+</head>
+<body>
+<div class="cart-header">
+  <a href="products.html">← CONTINUE SHOPPING</a>
+  <h2>LETSO LUXE</h2>
+  <a href="wishlist.html">♡ WISHLIST <span id="wishlistCount">0</span></a>
+</div>
+
+<div class="cart-container">
+  <div class="cart-left">
+    <h1 id="cartTitle">Your Cart</h1>
+    <div id="cartItems"></div>
+    <div id="emptyCart" style="display:none;text-align:center;padding:60px">
+      <h2>Your Cart is Empty</h2>
+      <a href="products.html" style="background:#000;color:#fff;padding:12px 25px;border-radius:25px;text-decoration:none;display:inline-block;margin-top:15px">Start Shopping</a>
+    </div>
+  </div>
+  <div class="cart-right" id="cartSummary">
+    <div class="order-box">
+      <h3>ORDER SUMMARY</h3>
+      <div style="display:flex;justify-content:space-between;margin:12px 0"><span>Subtotal</span><span id="subtotal">R0</span></div>
+      <div style="display:flex;justify-content:space-between;margin:12px 0"><span>Delivery</span><span>Calculated at checkout</span></div>
+      <hr>
+      <div style="display:flex;justify-content:space-between;font-weight:bold;font-size:18px"><span>Total</span><span id="total">R0</span></div>
+      <button class="checkout-btn" onclick="checkoutWhatsApp()">CHECKOUT ON WHATSAPP</button>
+      <p style="font-size:11px;color:#666;text-align:center;margin-top:10px">You will be redirected to WhatsApp</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- FIXED CART LOGIC ----
+let cart = JSON.parse(localStorage.getItem('letsoCart')) || [];
+let wishlist = JSON.parse(localStorage.getItem('letsoWishlist')) || [];
+
+// Clean old broken data
+cart = cart.map(i => ({
+  id: Number(i.id) || Date.now()+Math.random(),
+  name: i.name,
+  price: Number(String(i.price).replace(/[^0-9]/g,'')) || 0,
+  image: i.image,
+  qty: Number(i.qty) || 1
+})).filter(i => i.price > 0);
+localStorage.setItem('letsoCart', JSON.stringify(cart));
+
+function getImage(name, original) {
+    if (original && original.startsWith('images/')) return original;
+    if (original && original.startsWith('/images/')) return original;
+
+    const imageMap = {
+      'Vintage Band Tee': 'images/vintagetee.jpeg',
+      'Oversized Graphic Hoodie': 'images/hoodie.png',
+      'Distressed Denim Jacket': 'images/jeanjacket.png',
+      'Baggy Cargo Pants': 'images/cargopants.jpeg',
+      'Chunky White Sneakers': 'images/chunkyshoes.jpeg',
+      'Retro Skate Shoes': 'images/skatesneaker.jpeg',
+      'Mini Shoulder Bag': 'images/bag.jpeg',
+      'Vintage Leather Satchel': 'images/satchel.jpeg',
+      'Chunky Chain Necklace': 'images/chunkynecklace.jpeg',
+      'Hoop earrings': 'images/hoopearrings.jpeg',
+      'Vitamin C Glow Serum': 'images/serum.jpeg',
+      'Matte Luxe Lipstick': 'images/lipstick.jpeg',
+      'Luxe Signature Perfume': 'images/perfume.jpeg',
+      'Luxury Scented Candle': 'images/candle.jpeg',
+      'Velvet Throw Blanket': 'images/throw.jpeg',
+      'Gold Ceramic Vase': 'images/vase.jpeg',
+      'Luxury Blazer': 'images/blazer.jpg',
+      'Statement Set': 'images/dress.jpg',
+      'Minimal Heels': 'images/heels.jpg',
+      'Cotton Tote Bag': 'images/tote.jpg'
+    };
+
+    return imageMap[name] || 'images/default.jpg';
+  }
+
+function showCart(){
+  const container = document.getElementById('cartItems');
+  const empty = document.getElementById('emptyCart');
+  const summary = document.getElementById('cartSummary');
+  let total = 0;
+  let qtyTotal = 0;
+
+  if(cart.length===0){
+    container.innerHTML='';
+    empty.style.display='block';
+    summary.style.display='none';
+    document.getElementById('cartTitle').innerText='Your Cart (0 items)';
+    return;
+  }
+
+  empty.style.display='none';
+  summary.style.display='block';
+  container.innerHTML='';
+
+  cart.forEach(item=>{
+    const imgUrl = getImage(item.name, item.image);
+    const itemTotal = item.price * item.qty;
+    total+=itemTotal;
+    qtyTotal+=item.qty;
+    container.innerHTML+=`
+      <div class="cart-item">
+        <img src="${imgUrl}" alt="${item.name}" onerror="this.src='images/default.jpg'">
+        <div class="cart-item-info">
+          <strong>${item.name}</strong><br>
+          <span style="color:#666;font-size:13px">R${item.price} each</span>
+          <div class="qty-controls">
+            <button onclick="changeQty(${item.id}, -1)">−</button>
+            <span>${item.qty}</span>
+            <button onclick="changeQty(${item.id}, 1)">+</button>
+            <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+          </div>
+        </div>
+        <div style="font-weight:bold">R${itemTotal}</div>
+      </div>`;
+  });
+
+  document.getElementById('cartTitle').innerText=`Your Cart (${qtyTotal} items)`;
+  document.getElementById('subtotal').innerText='R'+total;
+  document.getElementById('total').innerText='R'+total;
+  document.getElementById('wishlistCount').innerText=wishlist.length;
+}
+
+function changeQty(id, delta){
+  id = Number(id);
+  let item = cart.find(i => Number(i.id) === id);
+  if(item){
+    item.qty += delta;
+    if(item.qty <= 0){
+      cart = cart.filter(i => Number(i.id) !== id);
+    }
+    localStorage.setItem('letsoCart', JSON.stringify(cart));
+    showCart();
+  }
+}
+
+function removeFromCart(id){
+  id = Number(id);
+  cart = cart.filter(i => Number(i.id) !== id);
+  localStorage.setItem('letsoCart', JSON.stringify(cart));
+  showCart();
+}
+
+function checkoutWhatsApp(){
+  if(cart.length===0) return;
+  let total=0;
+  let msg="Hello *LETSO LUXE*!%0A%0AI want to order:%0A%0A";
+  cart.forEach(i=>{
+    let it = i.price*i.qty;
+    total+=it;
+    msg+=`${i.name} - R${i.price} x ${i.qty} = R${it}%0A`;
+  });
+  msg+=`%0A*TOTAL: R${total}*`;
+  let phone="27821234567"; // PUT YOUR NUMBER HERE
+  window.open(`https://wa.me/${phone}?text=${msg}`,'_blank');
+}
+
+window.onload=showCart;
+</script>
+</body>
+</html>
